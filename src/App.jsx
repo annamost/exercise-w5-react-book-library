@@ -1,13 +1,20 @@
 import "./App.css";
 import data from "./data.json";
+import { Book } from "./components/Book";
+
 
 function App() {
   const { books } = data;
-  console.log(books);
 
   return (
     <>
-      <div>Book library goes here</div>
+      <div>
+        {books.map((book, index) => {
+          return <Book key={index} book={book} />
+        })}
+      </div>
+
+
     </>
   );
 }
